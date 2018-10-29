@@ -4,8 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "show-fast-check": "cat node_modules/fast-check/package.json | grep version",
     "show-pure-rand": "((test -e node_modules/fast-check/node_modules/pure-rand/package.json && cat node_modules/fast-check/node_modules/pure-rand/package.json) || cat node_modules/pure-rand/package.json) | grep version",
-    "start": "tsc && yarn add pure-rand@1.1.1 && yarn show-pure-rand && node src/index && yarn add pure-rand@1.5.0 && yarn show-pure-rand && node src/index"
+    "start": "tsc && yarn add pure-rand@1.1.1 && yarn show-fast-check && yarn show-pure-rand && node src/index && yarn add pure-rand@1.5.0 && yarn show-fast-check && yarn show-pure-rand && node src/index"
   },
   "devDependencies": {
     "ts-node": "^7.0.1",
